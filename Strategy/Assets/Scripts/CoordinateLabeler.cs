@@ -34,6 +34,6 @@ public class CoordinateLabeler : MonoBehaviour
 
     void UpdateObjectName()
     {
-        transform.parent.name = "Coordinates (" + coordinates.x + ", " + coordinates.y + ")";
+        transform.parent.name =   coordinates.x + ", " + coordinates.y;
     }
 }
