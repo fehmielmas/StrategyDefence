@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2917612290968173523}
   - component: {fileID: 2293083721789060214}
   - component: {fileID: 4050526306417721532}
+  - component: {fileID: 5017106316891620861}
   m_Layer: 0
   m_Name: Ball_Green
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5017106316891620861
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537391667842441577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.83950627
+  m_Center: {x: 0, y: 0.83950627, z: 0}
