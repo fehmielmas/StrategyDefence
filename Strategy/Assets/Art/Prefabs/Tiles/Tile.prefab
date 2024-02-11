@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf912a3e2e0ce5a4a92f095557d7def7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palPrefab: {fileID: 3604292001677555792, guid: 87136273c98543645a6dde6c678fbd4a,
+    type: 3}
+  isPlaceable: 0
 --- !u!65 &4625941412259120348
 BoxCollider:
   m_ObjectHideFlags: 0
