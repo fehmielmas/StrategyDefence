@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7190421841817012345}
   - component: {fileID: 984569230495752283}
+  - component: {fileID: 4625941412259120348}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf912a3e2e0ce5a4a92f095557d7def7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4625941412259120348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190421841817012344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &7190421843364787596
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube_Grass_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611673288037805286, guid: 34b5ef97b41a9d848bb00f51a699c768,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2095863765794485852, guid: 34b5ef97b41a9d848bb00f51a699c768,
         type: 3}
