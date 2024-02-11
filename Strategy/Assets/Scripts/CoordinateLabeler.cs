@@ -9,14 +9,16 @@ public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] private Color defaultColor = Color.black;
     [SerializeField] private Color blockedColor = Color.white;
-    
+
     private TextMeshPro label;
     private Vector2Int coordinates = new Vector2Int();
-    WayPoint wayPoint;
+    private WayPoint wayPoint;
 
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
+
         wayPoint = GetComponentInParent<WayPoint>();
         DisplayCoordinates();
     }
@@ -28,22 +30,35 @@ public class CoordinateLabeler : MonoBehaviour
             DisplayCoordinates();
             UpdateObjectName();
         }
-        
+
         ColorCoordinates();
+        ToggleLabels();
+    }
+
+    void ToggleLabels()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            label.enabled = !label.enabled;
+        }
     }
 
     void ColorCoordinates()
     {
-        if (wayPoint.IsPlaceable)
+        if (wayPoint != null)
         {
-            label.color = defaultColor;
-        }
-        else
-        {
-            label.color = blockedColor;
+            if (wayPoint.IsPlaceable)
+            {
+                label.color = defaultColor;
+            }
+            else
+            {
+                label.color = blockedColor;
+            }
         }
     }
-    private void DisplayCoordinates()
+
+    void DisplayCoordinates()
     {
         coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
         coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
@@ -52,6 +67,6 @@ public class CoordinateLabeler : MonoBehaviour
 
     void UpdateObjectName()
     {
-        transform.parent.name =   coordinates.x + ", " + coordinates.y;
+        transform.parent.name = coordinates.x + ", " + coordinates.y;
     }
 }
