@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,7 +5,7 @@ public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private int poolSize = 5;
-    [SerializeField] float spawnTimer = 2f;
+    [SerializeField] private float spawnTimer = 2f;
 
     private GameObject[] pool;
 
@@ -14,6 +13,7 @@ public class ObjectPool : MonoBehaviour
     {
         PopulatePool();
     }
+
     void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -29,11 +29,23 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    void EnableObjectInPool()
+    {
+        for (int i = 0; i < pool.Length; i++)
+        {
+            if (!pool[i].activeInHierarchy)
+            {
+                pool[i].SetActive(true);
+                return;
+            }
+        }
+    }
+
     IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity); // Instantiate at the position of the ObjectPool object
+            EnableObjectInPool();
             yield return new WaitForSeconds(spawnTimer);
         }
     }

@@ -6,7 +6,7 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private List<WayPoint> path = new List<WayPoint>();
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
-    void Start()
+    void OnEnable()
     {
         FindPath();
         ReturnToStart();
