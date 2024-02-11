@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class WayPoint : MonoBehaviour
 {
-    private void OnMouseOver()
+    [SerializeField] private bool isPlaceable;
+    private void OnMouseDown()
     {
-        Debug.Log(transform.name);
+        if(isPlaceable)
+        {
+            Debug.Log(transform.name);
+        }
     }
 }
