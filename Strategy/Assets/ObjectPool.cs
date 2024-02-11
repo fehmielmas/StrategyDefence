@@ -4,7 +4,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] float spawnTimer = 1f;
+    [SerializeField] float spawnTimer = 2f;
 
     // Start is called before the first frame update
     void Start()
